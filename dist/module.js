@@ -1,5 +1,5 @@
 ///<reference path="../node_modules/grafana-sdk-mocks/app/headers/common.d.ts" />
-System.register(['./canvas-metric', './distinct-points', 'lodash', 'jquery', './jquery-ui', 'moment', 'app/core/utils/kbn', 'app/core/app_events', 'plugins/natel-discrete-panel/css/jquery-ui-overcast.css!'], function(exports_1) {
+System.register(['./canvas-metric', './distinct-points', 'lodash', 'jquery', './lib/jquery-ui.min', 'moment', 'app/core/utils/kbn', 'app/core/app_events', 'plugins/natel-discrete-panel/css/jquery-ui-overcast.css!'], function(exports_1) {
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
         function __() { this.constructor = d; }
@@ -318,7 +318,9 @@ System.register(['./canvas-metric', './distinct-points', 'lodash', 'jquery', './
                             data.push(res);
                         }
                     });
+                    console.log('GOT DATA!');
                     this.annotationsPromise.then(function (result) {
+                        console.log('and promise', result);
                         _this.loading = false;
                         _this.annotations = result.annotations;
                         _this.render();

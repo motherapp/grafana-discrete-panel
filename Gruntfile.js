@@ -9,13 +9,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-string-replace');
 
   grunt.initConfig({
-    clean: ['dist'],
+    clean: ['dist', 'src/lib'],
 
     copy: {
+      libs: {
+        cwd: 'node_modules/jquery-ui-dist',
+        expand: true,
+        src: ['jquery-ui.min.js'],
+        dest: 'src/lib',
+      },
       dist_js: {
         expand: true,
         cwd: 'src',
-        src: ['**/*.ts', '**/*.d.ts'],
+        src: ['**/*.ts', '**/*.d.ts', 'lib/*'],
         dest: 'dist',
       },
       dist_html: {
@@ -114,6 +120,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'clean',
+    'copy:libs',
     'copy:dist_js',
     'typescript:build',
     'copy:dist_html',

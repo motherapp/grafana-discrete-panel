@@ -7,7 +7,7 @@ import {DistinctPoints} from './distinct-points';
 
 import _ from 'lodash';
 import $ from 'jquery';
-import './jquery-ui';
+import './lib/jquery-ui.min';
 import moment from 'moment';
 import kbn from 'app/core/utils/kbn';
 
@@ -356,8 +356,10 @@ class DiscretePanelCtrl extends CanvasPanelCtrl {
       }
     });
 
+    console.log('GOT DATA!');
     this.annotationsPromise.then(
       result => {
+        console.log('and promise', result);
         this.loading = false;
         this.annotations = result.annotations;
         this.render();
