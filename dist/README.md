@@ -29,11 +29,18 @@ To lint everything:
 yarn pretty
 ```
 
+#### Roadmap
+
+* TODO: better documentation
+* release v1.0
+
 #### Changelog
 
 ##### v0.0.8 (not released yet)
 
-* TODO... annotations
+* Support Snapshots (thanks @londonanthonyoleary)
+* Support Annotatoins (thanks @londonanthonyoleary)
+* Support UTC Time (thanks @londonanthonyoleary)
 
 ##### v0.0.7
 

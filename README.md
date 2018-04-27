@@ -31,7 +31,6 @@ yarn pretty
 
 #### Roadmap
 
-* TODO: annotation support
 * TODO: better documentation
 * release v1.0
 
@@ -40,6 +39,8 @@ yarn pretty
 ##### v0.0.8 (not released yet)
 
 * Support Snapshots (thanks @londonanthonyoleary)
+* Support Annotatoins (thanks @londonanthonyoleary)
+* Support UTC Time (thanks @londonanthonyoleary)
 
 ##### v0.0.7
 
