@@ -204,7 +204,6 @@ export class CanvasPanelCtrl extends MetricsPanelCtrl {
     this.canvas.addEventListener(
       'mousedown',
       evt => {
-        this.mouse.down = this.getMousePosition(evt);
       },
       false
     );
@@ -227,23 +226,6 @@ export class CanvasPanelCtrl extends MetricsPanelCtrl {
     this.canvas.addEventListener(
       'mouseup',
       evt => {
-        this.$tooltip.detach();
-        let up = this.getMousePosition(evt);
-        if (this.mouse.down != null) {
-          if (up.x === this.mouse.down.x && up.y === this.mouse.down.y) {
-            this.mouse.position = null;
-            this.mouse.down = null;
-            this.onMouseClicked(up, evt);
-          } else {
-            let min = Math.min(this.mouse.down.ts, up.ts);
-            let max = Math.max(this.mouse.down.ts, up.ts);
-            let range = {from: moment.utc(min), to: moment.utc(max)};
-            this.mouse.position = up;
-            this.onMouseSelectedRange(range, evt);
-          }
-        }
-        this.mouse.down = null;
-        this.mouse.position = null;
       },
       false
     );
