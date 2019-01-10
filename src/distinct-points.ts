@@ -61,6 +61,9 @@ export class DistinctPoints {
         if (!this.asc) {
           this.last.start = ts;
         }
+        else {
+          this.last.ms = ts - this.last.start;
+        }
       } else {
         this.last = {
           val: val,
@@ -85,7 +88,7 @@ export class DistinctPoints {
 
     // Add a point beyond the controls
     if (this.last.start < ctrl.range.to) {
-      let until = this.last.start + 1;
+      let until = this.last.start + this.last.ms + 1;
       // let now = Date.now();
       // if(this.last.start < now && ctrl.range.to > now) {
       //   until = now;
