@@ -11,6 +11,7 @@ import kbn from 'app/core/utils/kbn';
 import appEvents from 'app/core/app_events';
 
 const grafanaColors = [
+  '#FFFFFF',
   '#7EB26D',
   '#EAB839',
   '#6ED0E0',
