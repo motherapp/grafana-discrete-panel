@@ -85,7 +85,7 @@ export class DistinctPoints {
 
     // Add a point beyond the controls
     if (this.last.start < ctrl.range.to) {
-      let until = ctrl.range.to + 1;
+      let until = this.last.start + 1;
       // let now = Date.now();
       // if(this.last.start < now && ctrl.range.to > now) {
       //   until = now;
@@ -93,7 +93,7 @@ export class DistinctPoints {
 
       // This won't be shown, but will keep the count consistent
       this.changes.push({
-        val: this.last.val,
+        val: "",
         start: until,
         ms: 0,
       });
